@@ -1,0 +1,603 @@
+﻿{
+  "name": "Languages",
+  "children": [
+    {
+      "name": "de",
+      "children": [
+        {
+          "name": "Salten, Felix",
+          "children": [
+            {
+              "name": "Josefine Mutzenbacher: oder Die Geschichte einer Wienerischen Dirne von ihr selbst erzählt",
+              "bibliography": {
+                "publication": {
+                  "month name": "February",
+                  "full": "February 15, 2010",
+                  "year": 2010,
+                  "day": 15,
+                  "month": 2
+                },
+                "title": "Josefine Mutzenbacher: oder Die Geschichte einer Wienerischen Dirne von ihr selbst erzählt",
+                "author": {
+                  "death": 1945,
+                  "name": "Salten, Felix",
+                  "birth": 1869
+                },
+                "languages": ["de"],
+                "subjects": ["Erotic stories, German"],
+                "congress classifications": ["PT"],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Busch, Wilhelm",
+          "children": [
+            {
+              "name": "Max und Moritz: Eine Bubengeschichte in sieben Streichen",
+              "bibliography": {
+                "publication": {
+                  "month name": "December",
+                  "full": "December 21, 2005",
+                  "year": 2005,
+                  "day": 21,
+                  "month": 12
+                },
+                "title": "Max und Moritz: Eine Bubengeschichte in sieben Streichen",
+                "author": {
+                  "death": 1908,
+                  "name": "Busch, Wilhelm",
+                  "birth": 1832
+                },
+                "languages": ["de"],
+                "subjects": [
+                  "Children's poetry, German",
+                  "Practical jokes -- Juvenile poetry",
+                  "Wit and humor"
+                ],
+                "congress classifications": ["PZ", "PT"],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Mann, Thomas",
+          "children": [
+            {
+              "name": "Buddenbrooks: Verfall einer Familie",
+              "bibliography": {
+                "publication": {
+                  "month name": "January",
+                  "full": "January 1, 2011",
+                  "year": 2011,
+                  "day": 1,
+                  "month": 1
+                },
+                "title": "Buddenbrooks: Verfall einer Familie",
+                "author": {
+                  "death": 1955,
+                  "name": "Mann, Thomas",
+                  "birth": 1875
+                },
+                "languages": ["de"],
+                "subjects": [
+                  "Germany -- Fiction",
+                  "Domestic fiction",
+                  "Families -- Fiction"
+                ],
+                "congress classifications": ["PT"],
+                "type": "Text"
+              },
+              "size": 1
+            },
+            {
+              "name": "Der Tod in Venedig",
+              "bibliography": {
+                "publication": {
+                  "month name": "April",
+                  "full": "April 22, 2004",
+                  "year": 2004,
+                  "day": 22,
+                  "month": 4
+                },
+                "title": "Der Tod in Venedig",
+                "author": {
+                  "death": 1955,
+                  "name": "Mann, Thomas",
+                  "birth": 1875
+                },
+                "languages": ["de"],
+                "subjects": [
+                  "Authors -- Fiction",
+                  "Munich (Germany) -- Fiction",
+                  "Venice (Italy) -- Fiction"
+                ],
+                "congress classifications": ["PT"],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Junger, Ernst",
+          "children": [
+            {
+              "name": "In Stahlgewittern, aus dem Tagebuch eines Stoßtruppführers",
+              "bibliography": {
+                "publication": {
+                  "month name": "October",
+                  "full": "October 19, 2010",
+                  "year": 2010,
+                  "day": 19,
+                  "month": 10
+                },
+                "title": "In Stahlgewittern, aus dem Tagebuch eines Stoßtruppführers",
+                "author": {
+                  "death": 1998,
+                  "name": "Junger, Ernst",
+                  "birth": 1895
+                },
+                "languages": ["de"],
+                "subjects": [
+                  "Jünger, Ernst, 1895-1998",
+                  "Soldiers -- Germany -- Diaries",
+                  "World War, 1914-1918 -- Personal narratives, German"
+                ],
+                "congress classifications": ["D501"],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Hauptmann, Gerhart",
+          "children": [
+            {
+              "name": "Bahnwärter Thiel",
+              "bibliography": {
+                "publication": {
+                  "month name": "July",
+                  "full": "July 11, 2009",
+                  "year": 2009,
+                  "day": 11,
+                  "month": 7
+                },
+                "title": "Bahnwärter Thiel",
+                "author": {
+                  "death": 1946,
+                  "name": "Hauptmann, Gerhart",
+                  "birth": 1862
+                },
+                "languages": ["de"],
+                "subjects": [],
+                "congress classifications": ["PT"],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Muller, F. Max (Friedrich Max)",
+          "children": [
+            {
+              "name": "The German Classics from the Fourth to the Nineteenth Century, Vol. 1 (of 2)",
+              "bibliography": {
+                "publication": {
+                  "month name": "March",
+                  "full": "March 7, 2016",
+                  "year": 2016,
+                  "day": 7,
+                  "month": 3
+                },
+                "title": "The German Classics from the Fourth to the Nineteenth Century, Vol. 1 (of 2)",
+                "author": {
+                  "death": 1900,
+                  "name": "Muller, F. Max (Friedrich Max)",
+                  "birth": 1823
+                },
+                "languages": ["de"],
+                "subjects": [],
+                "congress classifications": [],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Buchner, Georg",
+          "children": [
+            {
+              "name": "Woyzeck",
+              "bibliography": {
+                "publication": {
+                  "month name": "March",
+                  "full": "March, 2004",
+                  "year": 2004,
+                  "day": 1,
+                  "month": 3
+                },
+                "title": "Woyzeck",
+                "author": {
+                  "death": 1837,
+                  "name": "Buchner, Georg",
+                  "birth": 1813
+                },
+                "languages": ["de"],
+                "subjects": [
+                  "Murderers -- Drama",
+                  "Soldiers -- Mental health -- Drama",
+                  "Germany -- Drama"
+                ],
+                "congress classifications": ["PT"],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "la",
+      "children": [
+        {
+          "name": "Newton, Isaac, Sir",
+          "children": [
+            {
+              "name": "Philosophiae Naturalis Principia Mathematica",
+              "bibliography": {
+                "publication": {
+                  "month name": "March",
+                  "full": "March 2, 2009",
+                  "year": 2009,
+                  "day": 2,
+                  "month": 3
+                },
+                "title": "Philosophiae Naturalis Principia Mathematica",
+                "author": {
+                  "death": 1727,
+                  "name": "Newton, Isaac, Sir",
+                  "birth": 1642
+                },
+                "languages": ["la"],
+                "subjects": [
+                  "Celestial mechanics -- Early works to 1800",
+                  "Mechanics -- Early works to 1800"
+                ],
+                "congress classifications": ["QA"],
+                "type": "Text"
+              },
+              "size": 1
+            },
+            {
+              "name": "Opticks: Or, A Treatise of the Reflections, Refractions, Inflections, and Colours of Light",
+              "bibliography": {
+                "publication": {
+                  "month name": "August",
+                  "full": "August 23, 2010",
+                  "year": 2010,
+                  "day": 23,
+                  "month": 8
+                },
+                "title": "Opticks: Or, A Treatise of the Reflections, Refractions, Inflections, and Colours of Light",
+                "author": {
+                  "death": 1727,
+                  "name": "Newton, Isaac, Sir",
+                  "birth": 1642
+                },
+                "languages": ["en"],
+                "subjects": ["Optics -- Early works to 1800"],
+                "congress classifications": ["QC"],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pt",
+      "children": [
+        {
+          "name": "Figueiredo, Candido de",
+          "children": [
+            {
+              "name": "Novo dicionário da língua portuguesa",
+              "bibliography": {
+                "publication": {
+                  "month name": "April",
+                  "full": "April 2, 2010",
+                  "year": 2010,
+                  "day": 2,
+                  "month": 4
+                },
+                "title": "Novo dicionário da língua portuguesa",
+                "author": {
+                  "death": 1925,
+                  "name": "Figueiredo, Candido de",
+                  "birth": 1846
+                },
+                "languages": ["pt"],
+                "subjects": ["Portuguese language -- Dictionaries"],
+                "congress classifications": ["PC"],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tl",
+      "children": [
+        {
+          "name": "Balagtas, Francisco",
+          "children": [
+            {
+              "name": "Florante at Laura",
+              "bibliography": {
+                "publication": {
+                  "month name": "May",
+                  "full": "May 17, 2005",
+                  "year": 2005,
+                  "day": 17,
+                  "month": 5
+                },
+                "title": "Florante at Laura",
+                "author": {
+                  "death": 1862,
+                  "name": "Balagtas, Francisco",
+                  "birth": 1788
+                },
+                "languages": ["tl"],
+                "subjects": ["Tagalog poetry"],
+                "congress classifications": ["PL"],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "es",
+      "children": [
+        {
+          "name": "Aguado, Pedro de, active 16th century",
+          "children": [
+            {
+              "name": "Historia de Venezuela, Tomo I",
+              "bibliography": {
+                "publication": {
+                  "month name": "June",
+                  "full": "June 8, 2012",
+                  "year": 2012,
+                  "day": 8,
+                  "month": 6
+                },
+                "title": "Historia de Venezuela, Tomo I",
+                "author": {
+                  "death": 0,
+                  "name": "Aguado, Pedro de, active 16th century",
+                  "birth": 0
+                },
+                "languages": ["es"],
+                "subjects": [
+                  "Venezuela -- History -- 1556-1810",
+                  "Venezuela -- History -- To 1556"
+                ],
+                "congress classifications": ["F2301"],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Jimenez, Juan Ramon",
+          "children": [
+            {
+              "name": "Platero y yo",
+              "bibliography": {
+                "publication": {
+                  "month name": "February",
+                  "full": "February, 2006",
+                  "year": 2006,
+                  "day": 1,
+                  "month": 2
+                },
+                "title": "Platero y yo",
+                "author": {
+                  "death": 1958,
+                  "name": "Jimenez, Juan Ramon",
+                  "birth": 1881
+                },
+                "languages": ["es"],
+                "subjects": [
+                  "Authors -- Fiction",
+                  "Andalusia (Spain) -- Social life and customs -- Fiction",
+                  "Donkeys -- Fiction"
+                ],
+                "congress classifications": ["PQ"],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "fr",
+      "children": [
+        {
+          "name": "Guillaume, de Lorris, active 1230",
+          "children": [
+            {
+              "name": "Le roman de la rose - Tome I",
+              "bibliography": {
+                "publication": {
+                  "month name": "October",
+                  "full": "October 8, 2005",
+                  "year": 2005,
+                  "day": 8,
+                  "month": 10
+                },
+                "title": "Le roman de la rose - Tome I",
+                "author": {
+                  "death": 0,
+                  "name": "Guillaume, de Lorris, active 1230",
+                  "birth": 0
+                },
+                "languages": ["fr"],
+                "subjects": ["Courtly love -- Poetry", "Romances"],
+                "congress classifications": ["PQ"],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Loti, Pierre",
+          "children": [
+            {
+              "name": "La chanson des vieux époux",
+              "bibliography": {
+                "publication": {
+                  "month name": "February",
+                  "full": "February 27, 2016",
+                  "year": 2016,
+                  "day": 27,
+                  "month": 2
+                },
+                "title": "La chanson des vieux époux",
+                "author": {
+                  "death": 1923,
+                  "name": "Loti, Pierre",
+                  "birth": 1850
+                },
+                "languages": ["fr"],
+                "subjects": [],
+                "congress classifications": [],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Bergerac, Savinien de Cyrano de",
+          "children": [
+            {
+              "name": "L'autre monde ou Histoire comique des Etats et Empires de la Lune",
+              "bibliography": {
+                "publication": {
+                  "month name": "March",
+                  "full": "March 1, 2016",
+                  "year": 2016,
+                  "day": 1,
+                  "month": 3
+                },
+                "title": "L'autre monde ou Histoire comique des Etats et Empires de la Lune",
+                "author": {
+                  "death": 0,
+                  "name": "Bergerac, Savinien de Cyrano de",
+                  "birth": 0
+                },
+                "languages": ["fr"],
+                "subjects": [],
+                "congress classifications": [],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "nl",
+      "children": [
+        {
+          "name": "Winkler, Johan",
+          "children": [
+            {
+              "name": "De Nederlandsche Geslachtsnamen in Oorsprong, Geschiedenis en Beteekenis",
+              "bibliography": {
+                "publication": {
+                  "month name": "May",
+                  "full": "May 10, 2011",
+                  "year": 2011,
+                  "day": 10,
+                  "month": 5
+                },
+                "title": "De Nederlandsche Geslachtsnamen in Oorsprong, Geschiedenis en Beteekenis",
+                "author": {
+                  "death": 1916,
+                  "name": "Winkler, Johan",
+                  "birth": 1840
+                },
+                "languages": ["nl"],
+                "subjects": [
+                  "Names, Personal -- Netherlands",
+                  "Names, Personal -- Frisian"
+                ],
+                "congress classifications": ["CS"],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ru",
+      "children": [
+        {
+          "name": "Rachinskii, Sergei Aleksandrovich",
+          "children": [
+            {
+              "name": "1001 задача для умственного счета",
+              "bibliography": {
+                "publication": {
+                  "month name": "August",
+                  "full": "August 14, 2005",
+                  "year": 2005,
+                  "day": 14,
+                  "month": 8
+                },
+                "title": "1001 задача для умственного счета",
+                "author": {
+                  "death": 1902,
+                  "name": "Rachinskii, Sergei Aleksandrovich",
+                  "birth": 1836
+                },
+                "languages": ["ru"],
+                "subjects": [
+                  "Word problems (Mathematics)",
+                  "Mathematics -- Problems, exercises, etc."
+                ],
+                "congress classifications": ["QA"],
+                "type": "Text"
+              },
+              "size": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

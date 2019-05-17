@@ -1,4 +1,3 @@
-
 let allBooks = [];
 let allAuthors = [];
 let AllLanguages = [];
@@ -10,32 +9,32 @@ d3.json("classics.json", function(data) {
     let bookObject = {};
     bookObject.name = data[key]["bibliography"]["title"];
     bookObject.bibliography = data[key]["bibliography"];
-    allBooks.push(bookObject)
+    bookObject.size = 1;
+    allBooks.push(bookObject);
   }
   buildAuthors(allBooks);
   buildLanguages(allAuthors);
 
   let finalData = {
-    "name":"Languages",
-    children:AllLanguages
-  }
+    name: "Languages",
+    children: AllLanguages
+  };
   var myJSON = JSON.stringify(finalData);
   document.body.innerHTML = myJSON;
-
 });
 
 data = d3.json("newData.json");
-console.log(data)
+console.log(data);
 
-function buildAuthors(allBooks){
+function buildAuthors(allBooks) {
   allBooks.forEach(bookObject => {
     let AuthorObject = {};
     curAuthorName = bookObject.bibliography.author.name;
-    if (!AuthorSet.has(curAuthorName)){
+    if (!AuthorSet.has(curAuthorName)) {
       AuthorObject.name = curAuthorName;
       AuthorObject.books = [bookObject];
       allAuthors.push(AuthorObject);
-      AuthorSet.add(curAuthorName)
+      AuthorSet.add(curAuthorName);
     } else {
       AuthorObject = allAuthors.find(function(element) {
         return element.name == curAuthorName;
@@ -44,19 +43,18 @@ function buildAuthors(allBooks){
     }
   });
   //console.log(allAuthors)
-  
 }
 
-function buildLanguages(allAuthors){
+function buildLanguages(allAuthors) {
   allAuthors.forEach(AuthorObject => {
     let LanguageObject = {};
     curLanguage = AuthorObject.books[0].bibliography.languages[0];
     // add a for each loop to go through each value in the books array instead of just looking at the first book
-    if (!LanguageSet.has(curLanguage)){
+    if (!LanguageSet.has(curLanguage)) {
       LanguageObject.name = curLanguage;
       LanguageObject.Authors = [AuthorObject];
       AllLanguages.push(LanguageObject);
-      LanguageSet.add(curLanguage)
+      LanguageSet.add(curLanguage);
     } else {
       LanguageObject = AllLanguages.find(function(element) {
         return element.name == curLanguage;
@@ -145,7 +143,7 @@ function buildLanguages(allAuthors){
 //         .attr("fill-opacity", d => +labelVisible(d.target))
 //         .attrTween("transform", d => () => labelTransform(d.current));
 //   }
-  
+
 //   function arcVisible(d) {
 //     return d.y1 <= 3 && d.y0 >= 1 && d.x1 > d.x0;
 //   }
@@ -172,8 +170,6 @@ function buildLanguages(allAuthors){
 //     (root);
 // }
 
-
-
 // color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1))
 
 // format = d3.format(",d")
@@ -189,6 +185,5 @@ function buildLanguages(allAuthors){
 //     .padRadius(radius * 1.5)
 //     .innerRadius(d => d.y0 * radius)
 //     .outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius - 1));
-
 
 // d3 = require("d3@5")
