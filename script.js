@@ -6,11 +6,13 @@ LanguageSet = new Set();
 
 d3.json("classics.json", function(data) {
   for (key in data) {
-    let bookObject = {};
-    bookObject.name = data[key]["bibliography"]["title"];
-    bookObject.bibliography = data[key]["bibliography"];
-    bookObject.size = 1;
-    allBooks.push(bookObject);
+    if (data[key]["bibliography"]["languages"][0] !== "en") {
+      let bookObject = {};
+      bookObject.name = data[key]["bibliography"]["title"];
+      bookObject.bibliography = data[key]["bibliography"];
+      bookObject.size = 1;
+      allBooks.push(bookObject);
+    }
   }
   buildAuthors(allBooks);
   buildLanguages(allAuthors);
@@ -20,7 +22,6 @@ d3.json("classics.json", function(data) {
     children: AllLanguages
   };
   var myJSON = JSON.stringify(finalData);
-  document.body.innerHTML = myJSON;
 });
 
 function buildAuthors(allBooks) {
@@ -29,14 +30,14 @@ function buildAuthors(allBooks) {
     curAuthorName = bookObject.bibliography.author.name;
     if (!AuthorSet.has(curAuthorName)) {
       AuthorObject.name = curAuthorName;
-      AuthorObject.books = [bookObject];
+      AuthorObject.children = [bookObject];
       allAuthors.push(AuthorObject);
       AuthorSet.add(curAuthorName);
     } else {
       AuthorObject = allAuthors.find(function(element) {
         return element.name == curAuthorName;
       });
-      AuthorObject.books.push(bookObject);
+      AuthorObject.children.push(bookObject);
     }
   });
   //console.log(allAuthors)
@@ -45,142 +46,98 @@ function buildAuthors(allBooks) {
 function buildLanguages(allAuthors) {
   allAuthors.forEach(AuthorObject => {
     let LanguageObject = {};
-    curLanguage = AuthorObject.books[0].bibliography.languages[0];
+    curLanguage = AuthorObject.children[0].bibliography.languages[0];
     // add a for each loop to go through each value in the books array instead of just looking at the first book
     if (!LanguageSet.has(curLanguage)) {
       LanguageObject.name = curLanguage;
-      LanguageObject.Authors = [AuthorObject];
+      LanguageObject.children = [AuthorObject];
       AllLanguages.push(LanguageObject);
       LanguageSet.add(curLanguage);
     } else {
       LanguageObject = AllLanguages.find(function(element) {
         return element.name == curLanguage;
       });
-      LanguageObject.Authors.push(AuthorObject);
+      LanguageObject.children.push(AuthorObject);
     }
   });
 }
 
-// chart = {
-//   const root = partition(data);
+var width = 860,
+  height = 600,
+  radius = Math.min(width, height) / 2 - 10;
 
-//   root.each(d => d.current = d);
+var formatNumber = d3.format(",d");
 
-//   const svg = d3.select(DOM.svg(width, width))
-//       .style("width", "100%")
-//       .style("height", "auto")
-//       .style("font", "10px sans-serif");
+var x = d3.scale.linear().range([0, 2 * Math.PI]);
 
-//   const g = svg.append("g")
-//       .attr("transform", `translate(${width / 2},${width / 2})`);
+var y = d3.scale.sqrt().range([0, radius]);
 
-//   const path = g.append("g")
-//     .selectAll("path")
-//     .data(root.descendants().slice(1))
-//     .join("path")
-//       .attr("fill", d => { while (d.depth > 1) d = d.parent; return color(d.data.name); })
-//       .attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
-//       .attr("d", d => arc(d.current));
+var color = d3.scale.category20();
 
-//   path.filter(d => d.children)
-//       .style("cursor", "pointer")
-//       .on("click", clicked);
+var partition = d3.layout.partition().value(function(d) {
+  return d.size;
+});
 
-//   path.append("title")
-//       .text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
+var arc = d3.svg
+  .arc()
+  .startAngle(function(d) {
+    return Math.max(0, Math.min(2 * Math.PI, x(d.x)));
+  })
+  .endAngle(function(d) {
+    return Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx)));
+  })
+  .innerRadius(function(d) {
+    return Math.max(0, y(d.y));
+  })
+  .outerRadius(function(d) {
+    return Math.max(0, y(d.y + d.dy));
+  });
 
-//   const label = g.append("g")
-//       .attr("pointer-events", "none")
-//       .attr("text-anchor", "middle")
-//       .style("user-select", "none")
-//     .selectAll("text")
-//     .data(root.descendants().slice(1))
-//     .join("text")
-//       .attr("dy", "0.35em")
-//       .attr("fill-opacity", d => +labelVisible(d.current))
-//       .attr("transform", d => labelTransform(d.current))
-//       .text(d => d.data.name);
+var svg = d3
+  .select("body")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height)
+  .append("g")
+  .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-//   const parent = g.append("circle")
-//       .datum(root)
-//       .attr("r", radius)
-//       .attr("fill", "none")
-//       .attr("pointer-events", "all")
-//       .on("click", clicked);
+d3.json("newDataWithoutEnglish.json", function(root) {
+  svg
+    .selectAll("path")
+    .data(partition.nodes(root))
+    .enter()
+    .append("path")
+    .attr("d", arc)
+    .style("fill", function(d) {
+      //console.log(d.children);
+      return color(d.name);
+    })
+    .on("click", click)
+    .append("title")
+    .text(function(d) {
+      return d.name + "\n" + formatNumber(d.value);
+    });
+});
 
-//   function clicked(p) {
-//     parent.datum(p.parent || root);
+function click(d) {
+  svg
+    .transition()
+    .duration(750)
+    .tween("scale", function() {
+      var xd = d3.interpolate(x.domain(), [d.x, d.x + d.dx]),
+        yd = d3.interpolate(y.domain(), [d.y, 1]),
+        yr = d3.interpolate(y.range(), [d.y ? 20 : 0, radius]);
+      return function(t) {
+        x.domain(xd(t));
+        y.domain(yd(t)).range(yr(t));
+      };
+    })
+    .selectAll("path")
+    .attrTween("d", function(d) {
+      return function() {
+        return arc(d);
+      };
+    });
+}
 
-//     root.each(d => d.target = {
-//       x0: Math.max(0, Math.min(1, (d.x0 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
-//       x1: Math.max(0, Math.min(1, (d.x1 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
-//       y0: Math.max(0, d.y0 - p.depth),
-//       y1: Math.max(0, d.y1 - p.depth)
-//     });
-
-//     const t = g.transition().duration(750);
-
-//     // Transition the data on all arcs, even the ones that aren’t visible,
-//     // so that if this transition is interrupted, entering arcs will start
-//     // the next transition from the desired position.
-//     path.transition(t)
-//         .tween("data", d => {
-//           const i = d3.interpolate(d.current, d.target);
-//           return t => d.current = i(t);
-//         })
-//       .filter(function(d) {
-//         return +this.getAttribute("fill-opacity") || arcVisible(d.target);
-//       })
-//         .attr("fill-opacity", d => arcVisible(d.target) ? (d.children ? 0.6 : 0.4) : 0)
-//         .attrTween("d", d => () => arc(d.current));
-
-//     label.filter(function(d) {
-//         return +this.getAttribute("fill-opacity") || labelVisible(d.target);
-//       }).transition(t)
-//         .attr("fill-opacity", d => +labelVisible(d.target))
-//         .attrTween("transform", d => () => labelTransform(d.current));
-//   }
-
-//   function arcVisible(d) {
-//     return d.y1 <= 3 && d.y0 >= 1 && d.x1 > d.x0;
-//   }
-
-//   function labelVisible(d) {
-//     return d.y1 <= 3 && d.y0 >= 1 && (d.y1 - d.y0) * (d.x1 - d.x0) > 0.03;
-//   }
-
-//   function labelTransform(d) {
-//     const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
-//     const y = (d.y0 + d.y1) / 2 * radius;
-//     return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
-//   }
-
-//   return svg.node();
-// }
-
-// partition = data => {
-//   const root = d3.hierarchy(data)
-//       .sum(d => d.value)
-//       .sort((a, b) => b.value - a.value);
-//   return d3.partition()
-//       .size([2 * Math.PI, root.height + 1])
-//     (root);
-// }
-
-// color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1))
-
-// format = d3.format(",d")
-
-// width = 932
-
-// radius = width / 6
-
-// arc = d3.arc()
-//     .startAngle(d => d.x0)
-//     .endAngle(d => d.x1)
-//     .padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.005))
-//     .padRadius(radius * 1.5)
-//     .innerRadius(d => d.y0 * radius)
-//     .outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius - 1));
-
-// d3 = require("d3@5")
+d3.select(self.frameElement).style("height", height + "px");
