@@ -23,9 +23,6 @@ d3.json("classics.json", function(data) {
   document.body.innerHTML = myJSON;
 });
 
-data = d3.json("newData.json");
-console.log(data);
-
 function buildAuthors(allBooks) {
   allBooks.forEach(bookObject => {
     let AuthorObject = {};

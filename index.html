@@ -22,9 +22,19 @@
 <body>
   <script src="//d3js.org/d3.v3.min.js"></script>
   <!-- <script src="script.js"></script> -->
+  <link rel="stylesheet" href="style.css" />
+
+  <div class="sandbox sandbox-correct-pronounciation">
+    <h1 class="heading heading-correct-pronounciation">
+      The
+      <em>Foreign</em>
+      Classics
+    </h1>
+  </div>
+
   <script>
-    var width = 960,
-      height = 700,
+    var width = 860,
+      height = 600,
       radius = Math.min(width, height) / 2 - 10;
 
     var formatNumber = d3.format(",d");
@@ -33,7 +43,7 @@
 
     var y = d3.scale.sqrt().range([0, radius]);
 
-    var color = d3.scale.category20c();
+    var color = d3.scale.category20();
 
     var partition = d3.layout.partition().value(function(d) {
       console.log(d);
@@ -63,8 +73,7 @@
       .append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-    d3.json("data.json", function(error, root) {
-      if (error) throw error;
+    d3.json("data.json", function(root) {
       svg
         .selectAll("path")
         .data(partition.nodes(root))
@@ -73,7 +82,7 @@
         .attr("d", arc)
         .style("fill", function(d) {
           //console.log(d.children);
-          return color(d.name); //(d.children ? d : d.parent).name);
+          return color(d.name);
         })
         .on("click", click)
         .append("title")
@@ -85,7 +94,7 @@
     function click(d) {
       svg
         .transition()
-        .duration(750)
+        .duration(700)
         .tween("scale", function() {
           var xd = d3.interpolate(x.domain(), [d.x, d.x + d.dx]),
             yd = d3.interpolate(y.domain(), [d.y, 1]),
@@ -105,4 +114,21 @@
 
     d3.select(self.frameElement).style("height", height + "px");
   </script>
+
+  <p>
+    This visualization presents foreign classics in a hierarchial manner, which
+    could essentially be used as a book suggestion guide. The hierarchy is from
+    the inner ring to the outer ring. The inner ring comprises of the different
+    languages, all encoded in the global language code. The following are the language encodings:
+    <ul>
+      <li>de: Deutsch</li>
+      <li>fr: French</li>
+      <li>la: Latin</li>
+      <li>es: Spanish</li>
+      <li>pt: Portugese</li>
+      <li>tl: Tagalog</li>
+      <li>ru: Russian</li>
+      <li>nl: Dutch</li>
+    </ul>
+  </p>
 </body>
